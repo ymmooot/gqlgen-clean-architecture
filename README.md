@@ -15,7 +15,7 @@ $ gqlgen
 ## run server
 
 ```bash
-go run ./server/server.go
+$ go run ./server/server.go
 ```
 
 ## todo
