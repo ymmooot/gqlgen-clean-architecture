@@ -6,10 +6,10 @@ import (
 )
 
 type articleGateway struct {
-	sql SqlHandler
+	sql SQLHandler
 }
 
-func NewArticleGateway(sql SqlHandler) repository.ArticleRepository {
+func NewArticleGateway(sql SQLHandler) repository.ArticleRepository {
 	return &articleGateway{sql: sql}
 }
 

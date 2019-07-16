@@ -1,6 +1,6 @@
 package gateway
 
-type SqlHandler interface {
+type SQLHandler interface {
 	Query(string, ...interface{}) (Row, error)
 }
 
