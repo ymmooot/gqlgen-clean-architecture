@@ -15,10 +15,10 @@ func NewResolver(r repository.ArticleRepository) *Resolver {
 	}
 }
 
-func (r *Resolver) Article() gqlgen_clean_architecture.ArticleResolver {
+func (r Resolver) Article() gqlgen_clean_architecture.ArticleResolver {
 	return &articleResolver{}
 }
 
-func (r *Resolver) Query() gqlgen_clean_architecture.QueryResolver {
+func (r Resolver) Query() gqlgen_clean_architecture.QueryResolver {
 	return NewQueryResolver(r.articleRepository)
 }

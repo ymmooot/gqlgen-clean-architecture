@@ -10,13 +10,13 @@ type ArticleUseCase interface {
 }
 
 type ArticleUseCaseImpl struct {
-	articleRepostiroy repository.ArticleRepository
+	articleRepository *repository.ArticleRepository
 }
 
-func NewArticleUseCaseImpl(r repository.ArticleRepository) ArticleUseCase {
+func NewArticleUseCaseImpl(r *repository.ArticleRepository) ArticleUseCase {
 	return &ArticleUseCaseImpl{r}
 }
 
 func (a *ArticleUseCaseImpl) Find(articleID string) (*data.Article, error) {
-	return a.articleRepostiroy.Find(articleID)
+	return (*a.articleRepository).Find(articleID)
 }

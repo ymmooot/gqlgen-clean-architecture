@@ -2,13 +2,14 @@ package gateway
 
 import (
 	"github.com/ymmooot/gqlgen-clean-architecture/app/entity/data"
+	"github.com/ymmooot/gqlgen-clean-architecture/app/usecase/repository"
 )
 
 type articleGateway struct {
 	sql SqlHandler
 }
 
-func NewArticleGateway(sql SqlHandler) *articleGateway {
+func NewArticleGateway(sql SqlHandler) repository.ArticleRepository {
 	return &articleGateway{sql: sql}
 }
 
