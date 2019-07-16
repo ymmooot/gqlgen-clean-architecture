@@ -3,6 +3,7 @@ package infrastructure
 import (
 	"database/sql"
 
+	// MySQL driver
 	_ "github.com/go-sql-driver/mysql"
 	"github.com/ymmooot/gqlgen-clean-architecture/app/interfaceadapter/gateway"
 )
