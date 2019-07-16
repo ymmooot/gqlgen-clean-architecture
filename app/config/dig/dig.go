@@ -2,7 +2,7 @@ package dig
 
 import (
 	"github.com/pkg/errors"
-	"github.com/ymmooot/gqlgen-clean-architecture/app/infrastructure"
+	"github.com/ymmooot/gqlgen-clean-architecture/app/infrastructure/sql"
 	"github.com/ymmooot/gqlgen-clean-architecture/app/interfaceadapter/gateway"
 	"github.com/ymmooot/gqlgen-clean-architecture/app/interfaceadapter/resolver"
 	"github.com/ymmooot/gqlgen-clean-architecture/app/usecase"
@@ -14,7 +14,7 @@ func BuildDigDependencies() (*dig.Container, error) {
 
 	registerDependencies(
 		c,
-		infrastructure.NewSQLHandler,
+		sql.NewSQLHandler,
 		gateway.NewArticleGateway,
 		usecase.NewArticleUseCaseImpl,
 		resolver.NewResolver,
