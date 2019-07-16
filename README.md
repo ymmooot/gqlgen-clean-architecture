@@ -21,4 +21,4 @@ $ go run ./server/server.go
 ## todo
 
 - n+1 問題　dataloadn
-- digとか
+- mysql connection pool
