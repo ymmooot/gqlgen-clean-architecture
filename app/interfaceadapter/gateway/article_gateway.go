@@ -23,7 +23,11 @@ func (g *articleGateway) Find(articleID string) (*data.Article, error) {
 
 	for rows.Next() {
 		article = &data.Article{}
-		err = rows.Scan(&article.ID, &article.Title)
+		err := rows.Scan(&article.ID, &article.Title)
+
+		if err != nil {
+			return nil, err
+		}
 	}
 
 	return article, nil
