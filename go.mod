@@ -12,7 +12,9 @@ require (
 	github.com/mattn/go-sqlite3 v1.10.0 // indirect
 	github.com/mitchellh/cli v1.0.0 // indirect
 	github.com/olekukonko/tablewriter v0.0.1 // indirect
+	github.com/pkg/errors v0.8.1
 	github.com/rubenv/sql-migrate v0.0.0-20190618074426-f4d34eae5a5c // indirect
 	github.com/vektah/gqlparser v1.1.2
+	go.uber.org/dig v1.7.0
 	gopkg.in/gorp.v1 v1.7.2 // indirect
 )
