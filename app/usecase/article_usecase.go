@@ -5,18 +5,14 @@ import (
 	"github.com/ymmooot/gqlgen-clean-architecture/app/usecase/repository"
 )
 
-type ArticleUseCase interface {
-	Find(articleID string) (*data.Article, error)
+type ArticleUseCase struct {
+	articleRepository repository.ArticleRepository
 }
 
-type ArticleUseCaseImpl struct {
-	articleRepository *repository.ArticleRepository
+func NewArticleUseCase(r repository.ArticleRepository) ArticleUseCase {
+	return ArticleUseCase{r}
 }
 
-func NewArticleUseCaseImpl(r *repository.ArticleRepository) ArticleUseCase {
-	return &ArticleUseCaseImpl{r}
-}
-
-func (a *ArticleUseCaseImpl) Find(articleID string) (*data.Article, error) {
-	return (*a.articleRepository).Find(articleID)
+func (a ArticleUseCase) Find(articleID string) (*data.Article, error) {
+	return a.articleRepository.Find(articleID)
 }

@@ -13,7 +13,7 @@ type SQLHandler struct {
 }
 
 func NewSQLHandler() gateway.SQLHandler {
-	conn, err := sql.Open("mysql", "root:mysql@tcp(127.0.0.1)/hoge") // todo: get from env
+	conn, err := sql.Open("mysql", "root:mysql@tcp(127.0.0.1)/hoge?parseTime=true") // todo: get from env
 	if err != nil {
 		panic(err.Error)
 	}

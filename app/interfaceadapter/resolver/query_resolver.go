@@ -4,20 +4,20 @@ import (
 	"context"
 
 	"github.com/ymmooot/gqlgen-clean-architecture/app/entity/data"
-	"github.com/ymmooot/gqlgen-clean-architecture/app/usecase/repository"
+	"github.com/ymmooot/gqlgen-clean-architecture/app/usecase"
 )
 
 type queryResolver struct {
-	articleRepository repository.ArticleRepository
+	articleUsecase usecase.ArticleUseCase
 }
 
-func NewQueryResolver(r repository.ArticleRepository) *queryResolver {
+func NewQueryResolver(au usecase.ArticleUseCase) *queryResolver {
 	return &queryResolver{
-		articleRepository: r,
+		articleUsecase: au,
 	}
 }
 
 func (r *queryResolver) Article(ctx context.Context, id *string) (*data.Article, error) {
-	res, err := r.articleRepository.Find(*id)
+	res, err := r.articleUsecase.Find(*id)
 	return res, err
 }

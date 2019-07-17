@@ -2,16 +2,16 @@ package resolver
 
 import (
 	gqlgen_clean_architecture "github.com/ymmooot/gqlgen-clean-architecture"
-	"github.com/ymmooot/gqlgen-clean-architecture/app/usecase/repository"
+	"github.com/ymmooot/gqlgen-clean-architecture/app/usecase"
 )
 
 type Resolver struct {
-	articleRepository repository.ArticleRepository
+	articleUseCase usecase.ArticleUseCase
 }
 
-func NewResolver(r repository.ArticleRepository) *Resolver {
+func NewResolver(au usecase.ArticleUseCase) *Resolver {
 	return &Resolver{
-		articleRepository: r,
+		articleUseCase: au,
 	}
 }
 
@@ -20,5 +20,5 @@ func (r Resolver) Article() gqlgen_clean_architecture.ArticleResolver {
 }
 
 func (r Resolver) Query() gqlgen_clean_architecture.QueryResolver {
-	return NewQueryResolver(r.articleRepository)
+	return NewQueryResolver(r.articleUseCase)
 }

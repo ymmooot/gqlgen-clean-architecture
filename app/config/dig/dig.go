@@ -16,7 +16,7 @@ func BuildDigDependencies() (*dig.Container, error) {
 		c,
 		sql.NewSQLHandler,
 		gateway.NewArticleGateway,
-		usecase.NewArticleUseCaseImpl,
+		usecase.NewArticleUseCase,
 		resolver.NewResolver,
 	)
 

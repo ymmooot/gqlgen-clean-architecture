@@ -1,0 +1,2 @@
+"""The `Date` scalar type represents datetime data. All date is UTC in this product."""
+scalar Date
